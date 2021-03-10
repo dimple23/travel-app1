@@ -7,7 +7,7 @@
 
 html {
 	font-family: 'Rochester', cursive;
-
+	
 }
 
 html, body {
@@ -28,8 +28,11 @@ html, body {
 	align-items: stretch;
 	
 }
+.faq{
+	color: white;
+}
 .about-app {
-	background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 247, 255));
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(255, 208, 0));
   color:purple;
   cursor: pointer;
   padding: 18px;
@@ -37,8 +40,8 @@ html, body {
   border: none;
   text-align: left;
   outline: none;
-  font-size:larger;
-	font-family: 'Courier New', Courier, monospace;
+  font-size:15px;
+	
 }
 
 .active, .about-app:hover {
@@ -64,7 +67,10 @@ html, body {
 	height: 500px;
 
 }
-
+.footer{
+	color: whitesmoke;
+	font-size: large;
+}
 
 label{
   color:seashell;
