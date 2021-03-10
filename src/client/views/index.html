@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Travel-app</title>
+</head>
+<body>
+  
+   
+  <header class="header" ><h1><strong>Travel-app</strong></h1>
+  <main id="main">
+    <section1 id="section1">
+  <form class="form">
+    <label class="destination">Trip Destination:</label>
+    <input class="text" type="text" value="" placeholder="please enter your destination ">
+    <label class="startdate">Trip start date: </label>
+
+    <input class="trip date" type="date" value="date">
+
+    <label class="enddate">Trip end date: </label>
+    <input class="trip date" type="date" value="date">
+
+
+   <button class="button " type="submit"><h1>Submit</h1>
+     </button>
+    </form>
+    </section1>
+<section2 id="section2">
+  <div id="results">
+    <img id="results-picture">
+    </img>
+    <div id="results-info">
+      <h3 id="results-destination"></h3>
+      <p id="results-date"></p>
+      <p id="results-duration"></p>
+      <p id="results-weather"></p>
+    </div>
+  </div>
+</section2>
+</main>
+
+<footer class="footer">Dimple Chavda</footer>
+
+<script>
+ 
+  if ('serviceWorker' in navigator) {
+      
+      window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+      });
+  }
+</script>
+
+</body>
+</html>
