@@ -28,6 +28,30 @@ html, body {
 	align-items: stretch;
 	
 }
+.about-app {
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 247, 255));
+  color:purple;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size:larger;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.active, .about-app:hover {
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(0, 247, 255));
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+	background-image: linear-gradient(to right, rgba(255,0,0,0), rgb(183, 0, 255));
+
+}
 
 #section1{
   display: flex;
