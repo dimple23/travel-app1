@@ -19,10 +19,10 @@ async function getlocation(destination){
 const CurrentWeatherbitURL=`https://api.weatherbit.io/v2.0/current?key=${process.env.WEATHERBIT_API_KEY}`
 const ForcastWeatherbitURL=`https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHERBIT_API_KEY}`
 
-async function getweather(latitude='',longitude='',type='',date=''){
+async function getweather(latitude='',longitude='',date=''){
   let url=''
 
-  if( type=='forecast'){
+  if (forecast(date)) {
     url=`${ForcastWeatherbitURL}&latitude=${latitude}&longitude=${longitude}&date=${date}`;
   }
   else{
@@ -60,18 +60,24 @@ async function getweather(latitude='',longitude='',type='',date=''){
 
   }
 
-  const currentdate = new Date()
+  function forecast(date) {
+    const today = new Date() 
+    const differencedays = dates(today, date)
+    console.log('Forecast: ', differencedays)
+    
 
-  const diff= dates(currentdate,Date)
-  console.log(diff);
-
+    return (differencedays > 7)
+  }
 
   function dates(startdate,enddate){
-    const Day=(Math.floor(enddate-startdate)/1000/60/60/24);
-    console.log(Day);
+    
+
+    const Day = 24 * 60 * 60 * 1000 
+    return Math.round((enddate-startdate)/Day)
   }
 
   function updateUI(trip) {
+
     
     const results = {
                         destination: document.getElementById('results-destinatoin'),
