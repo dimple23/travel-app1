@@ -72,7 +72,7 @@ async function getweather(latitude='',longitude='',date=''){
   function dates(startdate,enddate){
     
 
-    const Day = 24 * 60 * 60 * 1000 
+    const Day = 24*60*60*1000
     return Math.round((enddate-startdate)/Day)
   }
 
