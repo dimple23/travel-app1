@@ -4,7 +4,7 @@ async function Tripdata() {
       startdate: new Date(document.getElementById('startdate').value),
       enddate: new Date(document.getElementById('enddate').value)
   }
-  Data['duration'] = daysInDates(Data.startdate, Data.enddate)
+  Data['duration'] = dates(Data.startdate, Data.enddate)
   Data['Location'] = await getlocation(Data.destination)
   Data['weather'] = await getweather(Data.destination, Data.date)
   Data['imgURL'] = await getimageURL(Data.destination)

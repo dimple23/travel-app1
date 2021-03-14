@@ -26,3 +26,21 @@
   - npm run test
   - npm run start (to start node server)
 
+  - project by
+    
+    Dimple Chavda
+   - github link:
+     https://github.com/dimple23/travel-app1
+
+
+## Project Resources
+   - geonameAPI 
+      http://www.geonames.org/export/web-services.html
+   - PixabayAPI
+      https://pixabay.com/api/docs/
+   - WeatherbitAPI
+      https://www.weatherbit.io/account/create
+   - www.w3school.com
+   - www.stackoverflow.com
+   
+

@@ -3,6 +3,7 @@ async function getlocation(destination){
   const maxrows=1
   const res = await fetch(`${"http://api.geonames.org/searchJSON?q="}${destination}&maxrows=${maxrows}&username=${process.env.geousername}`)
   console.log('destination:',destination)
+  
 
 
   try{
@@ -13,6 +14,8 @@ async function getlocation(destination){
         return location
     }catch(error) {
         console.log('ERROR: ', error)
+        console.log(getlocation);
+
     }
 }
   
@@ -42,8 +45,11 @@ async function getweather(latitude='',longitude='',date=''){
       return weather
   }catch(error) {
       console.log('ERROR: ', error)
+     
   }
+  
   }
+  console.log(getweather);
 
   async function getimageURL(destination){
 
@@ -57,8 +63,9 @@ async function getweather(latitude='',longitude='',date=''){
 }catch(error) {
     console.log('ERROR: ', error)
 }
-
+ 
   }
+  console.log(getimageURL);
 
   function forecast(date) {
     const today = new Date() 
@@ -73,8 +80,13 @@ async function getweather(latitude='',longitude='',date=''){
     
 
     const Day = 24*60*60*1000
-    return Math.round((enddate-startdate)/Day)
+    return Math.round((enddate-startdate)/Day);
+    
+    
   }
+  
+  console.log(dates);
+
 
   function updateUI(trip) {
 
