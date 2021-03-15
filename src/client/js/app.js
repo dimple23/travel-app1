@@ -8,6 +8,8 @@ async function getlocation(destination){
 
   try{
     const data =await res.json()
+
+    //console.log("data ===", data)
     const location =  {lat: data.geonames[0].lat, lng: data.geonames[0].lng}
         console.log('Response: ', data)
         console.log('Location: ', location)
@@ -19,18 +21,23 @@ async function getlocation(destination){
     }
 }
   
+
+
+
 const CurrentWeatherbitURL=`https://api.weatherbit.io/v2.0/current?key=${process.env.WEATHERBIT_API_KEY}`
 const ForcastWeatherbitURL=`https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHERBIT_API_KEY}`
 
 async function getweather(latitude='',longitude='',date=''){
   let url=''
-
   if (forecast(date)) {
     url=`${ForcastWeatherbitURL}&latitude=${latitude}&longitude=${longitude}&date=${date}`;
   }
   else{
     url = `${CurrentWeatherbitURL}&latitude=${latitude}&longitude=${longitude}`;
   }
+
+  console.log(url)
+
 
   const req=await fetch(url)
 
@@ -49,7 +56,7 @@ async function getweather(latitude='',longitude='',date=''){
   }
   
   }
-  console.log(getweather);
+  //console.log(getweather);
 
   async function getimageURL(destination){
 
@@ -65,7 +72,7 @@ async function getweather(latitude='',longitude='',date=''){
 }
  
   }
-  console.log(getimageURL);
+  //console.log(getimageURL);
 
   function forecast(date) {
     const today = new Date() 
@@ -85,8 +92,6 @@ async function getweather(latitude='',longitude='',date=''){
     
   }
   
-  console.log(dates);
-
 
   function updateUI(trip) {
 
