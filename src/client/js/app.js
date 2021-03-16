@@ -11,12 +11,12 @@ async function getlocation(destination){
 
     //console.log("data ===", data)
     const location =  {lat: data.geonames[0].lat, lng: data.geonames[0].lng}
-        console.log('Response: ', data)
+        console.log('res: ', data)
         console.log('Location: ', location)
         return location
     }catch(error) {
         console.log('ERROR: ', error)
-        console.log(getlocation);
+        //console.log(getlocation);
 
     }
 }
@@ -125,6 +125,8 @@ async function getweather(latitude='',longitude='',date=''){
    
 
   async function Tripdata() {
+
+    event.preventDefault();
 
     const Data =  {
         destination: document.getElementById('destination').value,
