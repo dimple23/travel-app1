@@ -1,4 +1,4 @@
-
+export {Tripdata ,TripdataEventListener }
 async function getlocation(destination){
   const maxrows=1
   const res = await fetch(`${"http://api.geonames.org/searchJSON?q="}${destination}&maxrows=${maxrows}&username=${process.env.geousername}`)
@@ -76,7 +76,7 @@ async function getweather(latitude='',longitude='',date=''){
 
   function forecast(date) {
     const today = new Date() 
-    const differencedays = dates(today, date)
+    const differencedays =  dates(today, date)
     console.log('Forecast: ', differencedays)
     
 
@@ -122,6 +122,34 @@ async function getweather(latitude='',longitude='',date=''){
     console.log(resultsHTML);
     results.insertAdjacentHTML("beforeend", resultsHTML);
   }
+   
+
+  async function Tripdata() {
+
+    const Data =  {
+        destination: document.getElementById('destination').value,
+        startdate: new Date(document.getElementById('startdate').value),
+        enddate: new Date(document.getElementById('enddate').value)
+    }
+  
+    //console.log(" DATA ", Data)
+  
+    Data['duration'] = dates(Data.startdate, Data.enddate)
+    Data['Location'] = await getlocation(Data.destination)
+    Data['weather'] = await getweather(Data.destination, Data.date)
+    Data['imgURL'] = await getimageURL(Data.destination)
+  
+     updateUI(trip)
+  
+  }
+  
+  const TripdataEventListener = document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('submit').addEventListener('click', Tripdata,false)
+  })
+  
+  
+  
+
 
   var coll = document.getElementsByClassName("about-app");
 var i;
@@ -142,5 +170,4 @@ export{
   getweather,
   getimageURL,
   updateUI,
-
 }
