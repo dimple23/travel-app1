@@ -110,7 +110,7 @@ function updateUI(trip) {
       duration: document.getElementById('results-duration')
   }
   results.innerHTML = "";
-  results.style.display = "block";
+  //results.style.display = "block";
 
   let resultsHTML;
   resultsHTML = `
