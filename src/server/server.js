@@ -1,4 +1,4 @@
-const projectdata={};
+let projectdata={};
 //projectdata={};
 
 const dotenv = require('dotenv');
