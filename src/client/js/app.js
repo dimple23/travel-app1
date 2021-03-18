@@ -110,14 +110,26 @@ function updateUI(trip) {
         pic: document.getElementById('results-picture')
         
   }
-  //console.log(dates)
-  console.log('UpdateUI')
-    results.date.textContent =  trip.date.toDateString()
-    results.duration.textContent = `Your destination trip in  ${trip.destination} will be ${trip.duration} days long`
-    results.destination.textContent = trip.destination
-    results.weather.textContent = `Your destination Whether will be  ${trip.weather.temp}°C and ${trip.weather.description}`
-    results.pic.setAttribute('src', trip.imageURL)
-    results.pic.setAttribute('alt', trip.destination)
+ // console.log(dates)
+ results.innerHTML = "";
+ results.style.display = "block";
+
+ let resultsHTML;
+ resultsHTML = `
+                 <img src="${trip.imageURL}">
+                 <div class="card">
+                 <h1>${trip.location}</h1>
+                 <h2>${trip.date}</h2>
+                 <p> Your destination trip in ${trip.destination} will be ${trip.duration}days long </p>
+                 <p> Your destination Whether will be ${trip.weather} °C and  ${trip.description}</p>
+                 </div>`;
+
+
+
+ console.log(resultsHTML);
+ results.insertAdjacentHTML("beforeend", resultsHTML);
+
+
 }
 
 async function Tripdata() {
@@ -126,13 +138,13 @@ async function Tripdata() {
 
   const Data = {
       destination: document.getElementById('destination').value,
-      startdate: new Date(document.getElementById('startdate').value),
+      startdate: new Date(document.getElementById('date').value),
       enddate: new Date(document.getElementById('enddate').value)
   }
 
   //console.log(" DATA ", Data)
 
-  Data['duration'] = dates(Data.startdate, Data.enddate)
+  Data['duration'] = dates(Data.date, Data.enddate)
   Data['location'] = await getlocation(Data.destination)
   Data['weather'] = await getweather(Data.location.lat, Data.location.lng, Data.date)
   Data['imageURL'] = await getimageURL(Data.destination)
