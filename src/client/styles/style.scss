@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rochester&display=swap');
+//@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Rochester&display=swap');
 
 *{
   margin: 0;
   padding: 0;
 }
 
-html {
-	font-family: 'Rochester', cursive;
-	
-}
+
 
 html, body {
 	width: 100%;
@@ -19,13 +16,14 @@ html, body {
 }
 
 #main{
-	width: 500px;
+	width:100%;
 	margin-left: auto;
 	margin-right:auto;
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	
 }
 .faq{
@@ -41,6 +39,7 @@ html, body {
   text-align: left;
   outline: none;
   font-size:15px;
+	font-family: Arial, Helvetica, sans-serif;
 	
 }
 
@@ -103,19 +102,19 @@ font-size: 25px;
 .stratdate{
   width: 100%;
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   color:darkblue;
-  font-size: 25px;
+  font-size: 14px;
 
   }
 
 .enddate{
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   color:seashell;
-  font-size: 25px;
+  font-size: 18px;
 
   }
 ::placeholder{
@@ -136,12 +135,13 @@ button{
 }
 
 #section2{
-  display: none;
+  display: flex;
 	flex-direction: column;
-	width: 300px;
+	width: 100%;
 	align-items: center;
 	margin-bottom: 50px;
 	margin-top: 80px;
+	font-family: 'Times New Roman', Times, serif;
 }
 
 #results-info{
@@ -151,29 +151,75 @@ button{
 	margin-bottom: 30px;
 	justify-content: space-evenly;
 	align-items: center;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 14px;
+
 }
 
 h3{
-font-size: medium;
+font-size: 14px;
 }
 
 
 
 #results-destination{
 background-color: midnightblue;
+font-family: 'Times New Roman', Times, serif;
+color: aqua;
+
 }
 
 #results-date{
   background-color: midnightblue;
+	font-family: 'Times New Roman', Times, serif;
+	color: aqua;
+
 
 }
 
 #results-duration{
   background-color: midnightblue;
+	font-family: 'Times New Roman', Times, serif;
+	color: aqua;
+
 
 }
 
 #results-weather{
   background-color: midnightblue;
+	font-family: 'Times New Roman', Times, serif;
+
+
+}
+
+#results-picture img{
+	width: 30vw;
+    height: 30vw;
+}
+
+#results{
+	display: flex;
+	width: 100%;
+	margin-bottom: 30px;
+	justify-content: space-evenly;
+	flex-flow: row;
+	color: aqua;
+	align-items: center;
+	grid-area: content;
+	border-radius: 20px;
+	box-shadow: 12px 16px 55px aquamarine;
+}
+
+p{
+	width: 100%;
+	display: flex;
+	font-size: 20px;
+  color: aqua;
+	justify-content: space-evenly;
+	grid-area: content;
+	border-radius: 20px;
+	
+	flex-flow: row;
+	margin: auto;
 
 }

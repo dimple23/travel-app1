@@ -120,10 +120,12 @@ function updateUI(trip) {
  resultsHTML = `
                  <img src="${trip.imageURL}">
                  <div class="card">
-                 <h1>${trip.location.lat}</h1> <h1>${trip.location.lng}</h1> 
-                 <h2>StartDate: ${trip.startdate}</h2><h2> EndDate: ${trip.startdate}</h2>
+                  
+                 <p> <u>Your Trip StartDate: </u>${trip.startdate}</p><p> <u>Your Trip EndDate:</u> ${trip.startdate}</p>
                  <p> Your destination trip in ${trip.destination} will be ${duration}days long </p>
                  <p> Your destination Whether will be ${trip.weather.temp} °C and  ${trip.weather.description}</p>
+
+                 <p><u>latitude:</u>${trip.location.lat}</p> <p><u>longitude :</u>${trip.location.lng}</p>
                  </div>`;
 
 
