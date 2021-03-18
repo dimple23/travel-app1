@@ -103,33 +103,22 @@ function updateUI(trip) {
 
 
   const results = {
-      destination: document.getElementById('results-destinatoin'),
-      weather: document.getElementById('results-weather'),
-      pic: document.getElementById('results-picture'),
-      date: document.getElementById('results-date'),
-      duration: document.getElementById('results-duration')
+        date: document.getElementById('results-date'),
+        duration: document.getElementById('results-duration'),
+        destination: document.getElementById('results-destination'),
+        weather: document.getElementById('results-weather'),
+        pic: document.getElementById('results-picture')
+        
   }
-  results.innerHTML = "";
-  //results.style.display = "block";
-
-  let resultsHTML;
-  resultsHTML = `
-                  <img src="${trip.imageURL}">
-                  <div class="card">
-
-                  <h1>${trip.location}</h1>
-                  <h2>${trip.date}</h2>
-                  <p> Your destination trip in ${trip.destination} will be ${trip.duration}days long </p>
-                  <p> Your destination Whether will be ${trip.weather} °C and  ${trip.description}</p>
-
-                  </div>`;
-
-
-
-  console.log(resultsHTML);
-  results.insertAdjacentHTML("beforeend", resultsHTML);
+  //console.log(dates)
+  console.log('UpdateUI')
+    results.date.textContent =  trip.date.toDateString()
+    results.duration.textContent = `Your destination trip in  ${trip.destination} will be ${trip.duration} days long`
+    results.destination.textContent = trip.destination
+    results.weather.textContent = `Your destination Whether will be  ${trip.weather.temp}°C and ${trip.weather.description}`
+    results.pic.setAttribute('src', trip.imageURL)
+    results.pic.setAttribute('alt', trip.destination)
 }
-
 
 async function Tripdata() {
 
