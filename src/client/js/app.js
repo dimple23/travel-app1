@@ -110,25 +110,26 @@ function updateUI(trip) {
         pic: document.getElementById('results-picture')
         
   }
- // console.log(dates)
- results.innerHTML = "";
- results.style.display = "block";
+
+  let resultEle = document.getElementById("results");
+  let section2 = document.getElementById("section2");
+  section2.style.display = "block";
+  let duration =  dates(trip.startdate,trip.enddate);
 
  let resultsHTML;
  resultsHTML = `
                  <img src="${trip.imageURL}">
                  <div class="card">
-                 <h1>${trip.location}</h1>
-                 <h2>${trip.date}</h2>
-                 <p> Your destination trip in ${trip.destination} will be ${trip.duration}days long </p>
-                 <p> Your destination Whether will be ${trip.weather} °C and  ${trip.description}</p>
+                 <h1>${trip.location.lat}</h1> <h1>${trip.location.lng}</h1> 
+                 <h2>StartDate: ${trip.startdate}</h2><h2> EndDate: ${trip.startdate}</h2>
+                 <p> Your destination trip in ${trip.destination} will be ${duration}days long </p>
+                 <p> Your destination Whether will be ${trip.weather.temp} °C and  ${trip.weather.description}</p>
                  </div>`;
 
 
 
  console.log(resultsHTML);
- results.insertAdjacentHTML("beforeend", resultsHTML);
-
+ resultEle.innerHTML = resultsHTML; 
 
 }
 
