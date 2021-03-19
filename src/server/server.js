@@ -31,13 +31,16 @@ app.get('/get',(req,res)=>{
 });
 
 app.post('/add',(req,res)=>{
+  console.log("in Start of Add");
   const result = { }
   result['destination']=req.body.destination;
   result['date']=req.body.date;
   projectdata=result;
 
   res.send({success:true})
-
+  console.log("in End of Add");
 });
+
+
 
 

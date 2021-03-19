@@ -1,14 +1,22 @@
 const request = require('supertest')
 const app = require('../src/server/server');
-describe('Post Endpoints', () => {
-  it('should create a new post', async () => {
-    const res = await request(app)
-      .post('/add123')
-      .send({
-        userId: 1,
-        title: 'test is cool',
-      })
-    expect(res.statusCode).toEqual(201)
-    expect(res.body).toHaveProperty('post')
+
+describe('addtest', () => {
+  it('basic test', async () => {
+
+    let httpCode = 200;
+    expect(httpCode).toEqual(200)
   })
+
+  it("POST /add - success", async () => {
+    console.log("Test Post"+app);
+    let stateObj = {
+      destination: "Paris",
+      date: "19-Mar-2021",
+    };
+    let response = await request("http://localhost:8888").post("/add").send(stateObj);
+    console.log(response.body.success);
+    expect(response.body.success).toEqual(true);
+  });
+
 })
