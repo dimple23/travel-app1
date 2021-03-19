@@ -3,11 +3,11 @@ export {
   TripdataEventListener
 }
 
-
+//Geoname API
 async function getlocation(destination) {
   const maxrows = 1
   const res = await fetch(`${"http://api.geonames.org/search?name="}${destination}&type=json&username=${process.env.USERNAME}`)
-  console.log('destination:', destination)
+  console.log('destination:', destination)//to check and print the value of destination
 
 
 
@@ -30,7 +30,7 @@ async function getlocation(destination) {
 }
 
 
-
+//to get Weather Weatherbit API
 
 const CurrentWeatherbitURL = `https://api.weatherbit.io/v2.0/current?key=${process.env.WEATHER_KEY}`
 const ForcastWeatherbitURL = `https://api.weatherbit.io/v2.0/forecast/daily?key=${process.env.WEATHER_KEY}`
@@ -59,7 +59,7 @@ async function getweather(latitude = '', longitude = '', date = '') {
   }
 
 }
-
+// to get destination image used Pixabay API
 async function getimageURL(destination) {
 
   const res = await fetch(
@@ -98,7 +98,7 @@ function dates(startdate, enddate) {
 
 }
 
-
+//for updating UI
 function updateUI(trip) {
 
 
@@ -161,7 +161,7 @@ const TripdataEventListener = document.addEventListener('DOMContentLoaded', () =
 })
 
 
-
+// for FAQ part 
 
 var coll = document.getElementsByClassName("about-app");
 var i;
